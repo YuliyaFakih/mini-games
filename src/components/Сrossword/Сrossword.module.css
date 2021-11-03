@@ -1,0 +1,46 @@
+.mainPageContainer {
+    background: url(../../images/background.jpg) no-repeat;
+    background-size: 100vw 100vh;
+    height: 100vh;
+    display: flex;
+    column-gap: 24px;
+}
+
+.mainPageContainer__images {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    row-gap: 30px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.mainPageContainer__images img{
+    max-height: 100px;
+    max-width: fit-content;
+}
+
+.mainPageContainer__firstCrosswordPart__word, .mainPageContainer__secondCrosswordPart__word {
+    display: flex;
+    column-gap: 10px;
+    padding: 15px;
+    border-radius: 20%;
+}
+
+.mainPageContainer__firstCrosswordPart, .mainPageContainer__secondCrosswordPart {
+    display: grid;
+    align-items: center;
+    justify-items: start;
+}
+.square {
+    width: 30px;
+    height: 30px;
+    background: white;
+    font-size: larger;
+    font-family: cursive;
+    border: unset;
+    text-align: center;
+}
+.btnSubmit {
+    display: none;
+}

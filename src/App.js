@@ -1,25 +1,39 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Puzzle from './components/puzzle/puzzle.jsx'
+import {Route} from 'react-router-dom'
+import { Provider } from 'react-redux'
+import store from './store/store.js'
+import Сrossword from './components/Сrossword/Сrossword.jsx'
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+            
+          <Route path='/'>
+            <Puzzle />
+          </Route>
+          <Route path='/'>
+            <Сrossword />
+          </Route>
+          
+      </div>
+    </Provider>
   );
 }
 
 export default App;
+
+ /*<Provider store={store}>
+      <div className="App">
+          <Route path='/puzzle'>
+            <Puzzle />
+          </Route>
+          <Route path='/mathTask'>
+            <mathTask />
+          </Route>  
+          
+      </div>
+    </Provider> */

@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.mainPageContainer {
+    background: url('./../../images/background.jpg') no-repeat;
+    background-size: 100vw 100vh;
+    height: 100vh;
+}
+.mainPageContainer__deskBlock {
+    width: 50%;
+    height: 70%;
+    background-color: #5c2f1b;
+    position: absolute;
+    top: 15%;
+    left: 13%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;    
+}
+
+.mainPageContainer__deskBlock__figures {
+    mix-blend-mode: luminosity;
+}
+
+.mainPageContainer__figuresBlock {
+    position: absolute;
+    width: 400px;
+    right: 1%;
+    top: 9%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainPageContainer__changeThemeBtn {
+    position: absolute;
+    left: 29px;
+    top: 85px;
+    padding: 11px;
+    border-radius: 15%;
+    background-color: #a1724a;
+    font-size: 14px;
+}
