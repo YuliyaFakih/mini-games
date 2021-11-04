@@ -5,7 +5,9 @@ import style from './style.css'
 import store from '../../store/store'
 
 export default () => {
-    let initialState = store.getState()
+    let data = store.getState() 
+    
+    const [stateFigures, setStateFigures] = React.useState(data)
 
     function dragStart(event, id) {
         let action = {
@@ -32,13 +34,14 @@ export default () => {
                 dropFigure: event.target
             }
         }
-        store.dispatch(action, initialState);
+        store.dispatch(action, data);
+        setStateFigures(stateFigures.filter(el => !el.matched))
     }
     
     return (
         <div class="container" className={styles.mainPageContainer}>
             <div className={styles.mainPageContainer__deskBlock}>
-                {initialState && initialState.map((item) => (
+                {data && data.map((item) => (
                     <React.Fragment key={item.id}>
                         <img onDrop={(event) => dropEvent(event, item.id)} 
                         onDragOver={(event) => dragOver(event)}
@@ -47,7 +50,7 @@ export default () => {
                 ))}
             </div>
             <div className={styles.mainPageContainer__figuresBlock}>
-                {initialState && initialState.filter(el => !el.matched).sort(() => Math.random() - 0.5).map((item) => (
+                {stateFigures.filter(el => !el.matched).sort(() => Math.random() - 0.5).map((item) => (
                     <React.Fragment key={item.id}>
                         <img onDragStart={(event) => dragStart(event, item.id)}
                          className={styles.mainPageContainer__figuresBlock__figures} 

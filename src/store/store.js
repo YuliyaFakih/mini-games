@@ -11,7 +11,7 @@ import img_p8 from  '../images/p8.png'
 import img_p9 from  '../images/p9.png'
 import uuid from 'react-uuid'
 
-let initialState = [
+let data = [
     {id: uuid(), src: img_p1, alt: 'oval', matched: false}, 
     {id: uuid(), src: img_p2, alt: 'rhombus', matched: false},
     {id: uuid(), src: img_p3, alt: 'circle', matched: false},
@@ -22,6 +22,7 @@ let initialState = [
     {id: uuid(), src: img_p8, alt: 'rectangle', matched: false},
     {id: uuid(), src: img_p9, alt: 'triangle', matched: false}
 ]
-const store = createStore(Reducer, initialState);
+
+const store = createStore(Reducer, data, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() );
 
 export default store;
